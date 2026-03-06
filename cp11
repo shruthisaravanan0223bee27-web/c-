@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+class octal
+{
+   private:
+      int oct[100],l,d;
+   public:
+      void display()
+      {
+         cout<<"d ="<<d<<"  ";
+         for(int i=l-1;i>=0;i--)
+         {
+          cout<<oct[i]<<"  ";
+         }
+      }
+      void operator=(int no)
+      {
+        d=no;
+        int i=0;
+        while(no!=0)
+        {
+         oct[i]=no%8;
+         no=no/8;
+         i++;
+        }
+        l=i;
+      }
+      octal operator +(octal s)
+      {
+         octal r;
+         int z=d+s.d;
+         r=z;
+         return r;
+      }
+};
+int main()
+{
+   octal o1,o2,o3;
+   int n1,n2;
+   cin>>n1>>n2;
+   o1=n1;
+   o2=n2;
+   o3=o1+o2;
+   o1.display();
+   o2.display();
+   o3.display();
+}
