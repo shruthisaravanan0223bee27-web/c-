@@ -1,0 +1,45 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class rect
+{
+   float rl,img;
+   public:
+   void display()
+   {
+      cout<<rl<<"+j"<<img;
+   }
+   rect()
+   {
+   }
+   rect(float x,float y)
+   {
+      rl=x;
+      img=y;
+   }
+};
+class pol
+{
+   int a,b;
+   public:
+   void get()
+   {
+      cin>>a>>b;
+   }
+   operator rect()
+   {
+      float rl=a*(cos(b));
+      float img=a*(sin(b));
+      return rect(rl,img);
+   }
+};
+
+
+int main()
+{
+   pol p;
+   p.get();
+   rect r;
+   r=p;
+   r.display();
+}
