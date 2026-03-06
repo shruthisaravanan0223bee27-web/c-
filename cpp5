@@ -1,0 +1,11 @@
+ #include<iostream>
+  using namespace std;
+  #include<bits/stdc++.h>
+  int main()
+  {
+      int x;
+      char a;
+      float y;
+      cin>>a>>x>>y;
+      cout<<a<<" "<<x<<" "<<fixed<<setprecision(2)<<y;
+  }
