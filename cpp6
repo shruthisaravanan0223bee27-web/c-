@@ -1,0 +1,18 @@
+1 #include<iostream>
+  2 using namespace std;
+  3 class chocolate
+  4 {
+  5    int a,b,c;
+  6   public:
+  7    void display()
+  8    {
+  9       cout<<a<<" "<<b<<" "<<c;
+ 10    }
+ 11    void get()
+ 12    {
+ 13       cout<<"enter the number of chocolates";
+ 14       cin>>a>>b>>c;
+ 15    }
+ 16    friend chocolate operator *(chocolate,int);
+ 17 };
+ 18
