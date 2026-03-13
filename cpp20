@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+float shunt(float il,float v=220,float ra=1.2,float rsh=75)
+{
+   float ish=v/rsh;
+   float e=v+((il+ish)*ra);
+return e;
+}
+float series(float il, float v=220,float ra=1.2,float rse=6)
+{
+   float e=v+(ra+rse)*il;
+   return e;
+}
+float lshunt(float il,float v=220,float ra=1.2,float rse=6,float rsh=75)
+{
+   float ish=v/rsh;
+   float e=v+((il+ish)*(ra+rse));
+   return e;
+
+}
+float sshunt(float ia,float v=220,float ra=1.2,float rse=6)
+{
+   float e=v+(ra+rse)*ia;
+   return e;
+}
+int main()
+{
+   float i1,i2,v1,r1,r2,r3;
+   cout<"enter the values for v,il,ia,ra,rse,rsh";
+   cin>>v1>>i1>>i2>>r1>>r2>>r3;
+   cout<<"without default"<<endl;
+   cout<<"series emf:"<<series(i1,v1,r1,r2)<<endl;
+   cout<<"shunt emf:"<<shunt(i1,v1,r1,r2)<<endl;
+   cout<<"long shunt emf:"<<lshunt(i1,v1,r1,r2,r3)<<endl;
+   cout<<"short shunt emf:"<<sshunt(i2,v1,r1,r2)<<endl;
+   cout<<"with default"<<endl;
+   cout<<"series emf:"<<series(i1)<<endl;
+   cout<<"shunt emf:"<<shunt(i1)<<endl;
+   cout<<"long shunt emf:"<<lshunt(i1)<<endl;
+   cout<<"short shunt emf:"<<sshunt(i2)<<endl;
+   }
