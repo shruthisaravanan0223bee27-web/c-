@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+template<class T>
+void swap1(T x,T y)
+{
+   T z;
+   z=x;
+   x=y;
+   y=z;
+   cout<<x<<" "<<y<<endl;
+}
+main()
+{
+   swap1(10,20);
+   swap1(3.4,4.5);
+   swap1('c','h');
+   swap1("EEE","ECE");
+   }
