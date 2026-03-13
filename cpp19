@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int v=100;
+void potential(float r1)
+{
+   float i=v/r1;
+   cout<<"voltage through r1="<<(i*r1)<<endl;
+}
+void potential(float r1, float r2)
+{
+   float i=v/(r1+r2);
+   float v1=i*r1;
+   float v2=i*r2;
+   cout<<"voltage across r1="<<v1<<endl;
+   cout<<"voltage across r2="<<v2<<endl;
+}
+int main()
+{
+   potential(20.5);
+   potential(10.2,3.5);
+   return 0;
+}
